@@ -1,0 +1,136 @@
+/* --- Global Styles ---
+Set up basic font and box model.
+*/
+body {
+margin: 0;
+font-family: 'Inter', sans-serif;
+background-color: #f4f7f6;
+}
+
+/* --- Navbar Container (Desktop & Base) ---*/
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 2rem;
+background-color: #1a202c; 
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+color: white;
+}
+
+/* --- Logo/Left Side ---
+*/
+.navbar-left {
+flex-shrink: 0;
+}
+
+.navbar-logo {
+font-size: 1.75rem;
+font-weight: 700;
+color: #a7f3d0; /* Light green accent */
+text-decoration: none;
+transition: color 0.2s;
+}
+
+.navbar-logo:hover {
+color: #6ee7b7;
+}
+
+/* --- Links/Right Side ---*/
+.navbar-right {
+display: flex;
+align-items: center;
+
+gap: 1.25rem;
+}
+
+/* Common link styling */
+.nav-link {
+color: #cbd5e1; 
+text-decoration: none;
+font-size: 1rem;
+font-weight: 500;
+padding: 0.5rem 0;
+transition: color 0.2s, transform 0.1s;
+}
+
+.nav-link:hover {
+color: white;
+transform: translateY(-1px);
+}
+
+/* Register link special styling (often a button/primary action) */
+.nav-link.register {
+background-color: #34d399; 
+color: #1a202c; 
+padding: 0.5rem 1rem;
+border-radius: 0.5rem;
+font-weight: 600;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link.register:hover {
+background-color: #10b981;
+color: white;
+}
+
+/* Logout button styling */
+.logout-btn {
+background: none;
+border: 2px solid #ef4444; 
+color: #ef4444;
+padding: 0.5rem 1rem;
+border-radius: 0.5rem;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.2s, color 0.2s;
+}
+
+.logout-btn:hover {
+background-color: #ef4444;
+color: white;
+}
+
+/* --- Responsive Adjustments (Mobile/Smaller Screens) --- */
+@media (max-width: 768px) {
+.navbar {
+flex-direction: column;
+align-items: flex-start;
+padding: 1rem 1rem;
+}
+
+.navbar-left {
+width: 100%;
+margin-bottom: 0.75rem;
+}
+
+.navbar-right {
+display: flex;
+flex-wrap: wrap; 
+width: 100%;
+justify-content: flex-start;
+gap: 0.75rem; 
+}
+
+.nav-link, .logout-btn {
+/* Ensure small interactive elements are easily tappable */
+font-size: 0.9rem;
+padding: 0.4rem 0.8rem;
+}
+}
+
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-10px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}
